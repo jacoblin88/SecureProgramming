@@ -62,7 +62,7 @@ If the bytecode of the last character in context is zero,terminate the operation
   - So I decided to bruforce the flag by chaging the last character of context which the correct one will run the most bytecodes(because it will pass the terminal operation and go next).
 
   - By setting a counter to record the length of running bytecodes,we append the character to the tail of context which then bruforce the next correct character.Below is my source code.
-```python=
+```python
 #/usr/bin/env python3
 from ctypes import *
 from binascii import *
@@ -190,7 +190,7 @@ flag:FLAG{WinDbg_is_very_important_in_windows_security}
 
 ## Open my backd00r
 - Analyze the source code below:
-```
+```php
 <?php
 set_time_limit(3);
 ini_set('max_execution_time', 3);
@@ -234,7 +234,7 @@ flag:FLAG{do_u_like_my_d0000000r?}
 - After analyzing the source code,I found all random functions are actually generating certain values.
 - The uncertain factor in source code is only the key which used to encrypt the original flag,but the possibility of the key only differs from 0 to 255,vulnerable to be bruforced.
 - After reversing every functions which used to encrypt the flag,we used loop to list all flags which encrpyed by different keys,below is my exploit code:
-```=python3
+```python
 #!/usr/bin/env python3
 from sympy import *
 import random
@@ -358,7 +358,7 @@ flag:FLAG{q6B3KviyaM}
 - Analyzing the source code,I know the process on the system will execute the shell code I sent only when there are no bad characters '\x00\x05\x0f'.
 - Using pwntool's module shellcraft,I generated a shellcode without badcharacters,and finally got the flag.
 - Below is my exploit code:
-```
+```python
 from pwn import *
 
 host = 'edu-ctf.csie.org'
